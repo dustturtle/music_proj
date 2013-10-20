@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import<AVFoundation/AVFoundation.h>
 @interface ViewController : UIViewController
-
+<AVAudioPlayerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+{
+    UIImageView* rootImageView;
+   
+    AVAudioPlayer* _audioPlayer;
+    NSMutableArray* _pNames;
+    NSMutableArray* _hNames;
+   
+    int _songIndex;
+    UIButton* leftButton;
+    UIButton* rightButton;
+    
+    UILabel* _label;
+    UISlider* _slider;
+    UISlider* _volumeSlider;
+    NSTimer* processTimer;
+    NSTimer* timer1;
+}
+-(void)loadMusic:(NSString*)name type:(NSString*)type;
 @end
